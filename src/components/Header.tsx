@@ -1,15 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
 import { CiSearch } from "react-icons/ci";
-import { IoCart } from "react-icons/io5";
 import { CgProfile } from "react-icons/cg";
 import { SheetSide } from './SheetCode';
 import { NavigationMenuDemo } from './NavigationMenu';
+import { FaShoppingCart } from 'react-icons/fa';
+
 
 
 const Header = () => {
   return (
-    <header className='w-full h-[60px] bg-white flex justify-between items-center'>
+    <header className='w-full h-[60px] bg-white flex justify-between items-center max-w-screen-xl max-auto'>
         <div className='flex justify-center items-center'>
         <SheetSide />
         <h1 className='text-xl sm:text-3xl font-bold pl-2'>
@@ -20,11 +21,10 @@ const Header = () => {
         {/* Navbar content */}
         <ul className='hidden md:block'>
             <li className='space-x-5 flex items-center'>
-                
                 <Link href={""}> <NavigationMenuDemo /></Link>
                 <Link href={""}>On Sale</Link>
-                <Link href={""}>New Arrivals</Link>
-                <Link href={""}>Brands</Link>
+                <Link href={"/Products"}>New Arrivals</Link>
+                <Link href={"/casual"}>Brands</Link>
             </li>
         </ul>
         {/* Search input */}
@@ -37,10 +37,13 @@ const Header = () => {
 
         {/* Cart and profile icon */}
         <div className='flex items-center mr-7 space-x-5'>
-        <CiSearch  className='text-xl ml-2 md:hidden '/>
-        <IoCart  className='text-2xl'/>
+        <CiSearch  className='text-xl ml-2 md:hidden'/>
+        <Link href={"/cart"}> 
+        <FaShoppingCart className='text-2xl'/>
+        </Link>
         <CgProfile className='text-2xl'/>
         </div>
+       
         
     </header>
   )

@@ -1,101 +1,91 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
-import { Button } from '@/components/ui/button'
-import { BsGithub } from "react-icons/bs";
-import { LuInstagram } from "react-icons/lu";
-import { FaFacebook } from "react-icons/fa";
-import { TiSocialTwitter } from "react-icons/ti";
+import Image from 'next/image';
+import React from 'react';
+import { IoLogoTwitter, IoLogoFacebook, IoLogoInstagram,  IoLogoGithub } from "react-icons/io5";
+import LatestOffer from './LatestOffer';
 
-function Footer() {
+const Foter = () => {
   return (
-    <>
-    <div className='w-full min-w-full mt-5 '>
-        <div className='flex justify-center  min-w-screen max-w-screen'>
-        <div className=' w-[80%] h-80 lg:h-48 bg-black items-center justify-center lg:justify-between flex flex-col md:flex-row  top-16 right-4 rounded-lg relative   z-50'>
-            <div className='w-[100%] md:w-[60%] lg:w-[50%]'>
-                <p className='text-white mt-3 font-extrabold text-4xl  text-center'>STAY UPTO DATE ABOUT OUR LATEST OFFERS</p>
-            </div>
+    <main className='bg-[#F0F0F0] w-full h-full md:h-[450px] relative mt-32 max-w-screen-xl max-auto'>
 
-            <div>
-                <form >
-                    <div className='flex- flex-col items-center justify-center'>
-                    <input 
-    type="email" 
-    placeholder="Enter your email address" 
-    className=" pl-12 py-2 border border-gray-300 rounded-full text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-500 bg-white bg-[url('/email.svg')] bg-no-repeat bg-left"
-  /> 
-  </div> 
-  </form> 
-
-  <Button className='py-2 px-12 rounded-full mt-1 bg-white '>Subscribe To Newsletter</Button> 
-  </div>
-  </div>
-  </div>
-
-    <div className='w-full max-w-full  border-b-2 border-black   md:flex-row overflow-hidden  bg-[#F0F0F0]  py-16'>
-     
-      <div className='grid grid-cols-2 md:grid-cols-5 lg:grid-cols-5 gap-4 p-4 '>
-      <div className='flex flex-col col-span-2 md:col-span-1 items-center md:items-left text-center md:text-left text-black'>
-          <div className='font-bold text-[33.45px]'>SHOP.CO</div>
-          <p className='mt-2 text-base text-gray-500 font-[14px]'>We have clothes that suits your style and which you are proud to wear. From women to men.</p>
-          <div className='flex mt-4 gap-2 text-[28px]'>
-            <Link href='/' className='my-2'><TiSocialTwitter /></Link>
-            <Link href='/'className='my-2'><FaFacebook /></Link>
-            <Link href='/' className='my-2'><LuInstagram /></Link>
-          <Link href='/' className='my-2  '><BsGithub /></Link>
-          </div>
-      </div>
-        <div className='flex flex-col  text-center md:text-left text-black '>
-            <h4 className='font-semibold my-3  '>COMPANY</h4>
-            <Link href='/' className='my-2  '>About</Link>
-            <Link href='/' className='my-2'>Features</Link>
-            <Link href='/'className='my-2'>Works</Link>
-            <Link href='/' className='my-2'>Carrer</Link>
-            
-        </div>
-        <div className='flex flex-col  text-center md:text-left text-black '>
-            <h4 className='font-semibold my-3'>HELP</h4>
-            <Link href='/' className='my-2'>Customer Support</Link>
-            <Link href='/' className='my-2'>Delivery Details</Link>
-            <Link href='/'className='my-2'>Terms & Conditions</Link>
-            <Link href='/' className='my-2'>Privacy Policy</Link>
-        </div>
-        <div className='flex flex-col  text-center md:text-left text-black '>
-            <h4 className='font-semibold my-3'>FAQ</h4>
-            <Link href='/' className='my-2'>Account</Link>
-            <Link href='/' className='my-2'>Manage Deliveries</Link>
-            <Link href='/'className='my-2'>Orders</Link>
-            <Link href='/' className='my-2'>Payemnts</Link>
-           
-        </div>
-        <div className='flex flex-col  text-center md:text-left text-black '>
-            <h4 className='font-semibold my-3'>Resources</h4>
-            <Link href='/' className='my-2'>Free Ebooks</Link>
-            <Link href='/' className='my-2'>Development Tutorials</Link>
-            <Link href='/'className='my-2'>How-To-Blog</Link>
-            <Link href='/' className='my-2'>Youtube Playlist</Link>
-           
-        </div>
-
-      </div>
-    </div>
-    <div className='max-w-screen bg-[#F0F0F0] flex flex-col md:flex-row md:justify-between mt-4'> 
-        <p className='text-center m-4'>Shop.co © 2000-2023, All rights reserved.</p>
+     <span className='absolute top-[-80px]'>
+        <LatestOffer /> 
+        </span> 
+        {/* Container*/}
+        <div className='flex h-full md:h-[400px] flex-col md:flex-row justify-between items-start p-5 pt-[160px] sm:pt-32 border-b'>
         
+        {/* top div */}
+
+        <div className='flex flex-col justify-center items-center w-[200px]'>
+          <ul>
+            <h2 className='text-2xl sm:text-3xl font-extrabold'>SHOP.CO</h2>
+            <p className='text-sm mt-1'>We have clothes that suits your style and which you’re proud to wear. From women to men.</p>
+            {/* Icons */}
+            <div className='flex items-center space-x-3 mt-1'>
+            <IoLogoTwitter className='text-xl'/>
+            <IoLogoFacebook className='text-xl'/>
+            <IoLogoInstagram className='text-xl'/>
+            <IoLogoGithub className='text-xl'/>
+            </div>
+         </ul> 
+        </div>
+
+        {/* mid div */} 
+        <div className='w-full md:w-[900px] grid grid-cols-2 sm:grid-cols-4 place-items-center space-y-4'>
+            {/* box 1 */}
+            
+            <ul className='space-y-3 -ml-11 '>
+                <h2 className='text-sm sm:text-2xl'>COMPANY</h2>
+                <li className='text-sm'>About </li>
+                <li className='text-sm'>Features</li>
+                <li className='text-sm'>Work</li>
+                <li className='text-sm'>Career</li>
+            </ul>
+            
+            {/*box 2 */}
+            <ul className='space-y-3'>
+                <h2 className='text-sm sm:text-2xl'>HELP</h2>
+                <li className='text-sm'>Customer Support</li>
+                <li className='text-sm'>Delivery Details</li>
+                <li className='text-sm'>Terms & Conditions</li>
+                <li className='text-sm'>Privacy Policy</li>
+            </ul>
+
+            {/*box 3 */}
+            <ul className='space-y-3'>
+                <h2 className='text-sm sm:text-2xl'>FAQ</h2>
+                <li className='text-sm'>Account</li>
+                <li className='text-sm'>Manage Deliveries</li>
+                <li className='text-sm'>Order</li>
+                <li className='text-sm'>Payment</li>
+            </ul>
+
+            {/*box 4 */}
+            <ul className='space-y-3'>
+                <h2 className='text-sm sm:text-2xl'>RESOURCES</h2>
+                <li className='text-sm'>Free eBooks</li>
+                <li className='text-sm'>Development Tutorial</li>
+                <li className='text-sm'>How to - Blog</li>
+                <li className='text-sm'>Youtube Playlist</li>
+            </ul>
+            {/* boxes completed */}
+
+        </div>
+    </div>
+     {/* bottom div */}
+     <div className='flex flex-col sm:flex-row justify-between items-center mt-3'>
+            <p className='text-sm'>Shop.co © 2000-2023, All Rights Reserved</p>
             <div className='flex items-center justify-center m-4 gap-6'>
-                <Image width="46" height="30"  alt="icons" src='/icons/visa.svg'/>
-                <Image width="46" height="30"  alt="icons" src='/icons/mastercard.svg'/>
-                <Image width="46" height="30"  alt="icons" src='/icons/paypal.svg'/>
-                <Image width="46" height="30"  alt="icons" src='/icons/applePay.svg'/>
-                <Image width="46" height="30" alt="licons" src='/icons/googlePay.svg'/>
+                <Image className='w-[50px]' src='/icons/visa.svg' width={100} height={100} alt="icons" />
+                <Image className='w-[50px]' src='/icons/mastercard.svg' width={100} height={100} alt="icons" />
+                <Image className='w-[50px]' src='/icons/paypal.svg' width={100} height={100} alt="icons" />
+                <Image className='w-[50px]' src='/icons/applePay.svg' width={100} height={100} alt="icons" />
+                <Image className='w-[50px]' src='/icons/googlePay.svg' width={100} height={100} alt="icons" />
+
             </div>
-            </div>
-            </div> 
-    </>
-    )
+        </div>
+
+    </main>
+  )
 }
 
-export default Footer;
-
-
+export default Foter;

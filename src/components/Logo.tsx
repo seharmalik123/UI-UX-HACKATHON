@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const LogoSection = () => {
   return (
-    <div className="bg-black w-full h-[122px] flex justify-center space-x-4 md:justify-between items-center px-6 flex-wrap">
+    <div className="max-w-screen-xl max-auto bg-black w-full h-[122px] flex justify-center space-x-4 md:justify-between items-center px-6 flex-wrap">
      <Image 
      src={"/images/versace.png.png"}
      width={100}

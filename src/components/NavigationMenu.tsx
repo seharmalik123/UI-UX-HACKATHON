@@ -11,11 +11,12 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
+import Link from "next/link";
 
 const components: { title: string; href: string; description: string }[] = [
   
   {
-    title: "Progress",
+    title: "Casual",
     href: "/docs/primitives/progress",
     description:
       "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
@@ -50,14 +51,16 @@ export function NavigationMenuDemo() {
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[300px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {components.map((component) => (
+              {components.map((component, index) => (
+                <Link href={"/casual"} key={index}>
                 <ListItem
                   key={component.title}
                   title={component.title}
-                  href={component.href}
+                  href={"/casual"}
                 >
                   {component.description}
                 </ListItem>
+                </Link>
               ))}
             </ul>
           </NavigationMenuContent>

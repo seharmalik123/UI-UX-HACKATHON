@@ -3,7 +3,7 @@ import { RxCross2 } from "react-icons/rx";
 
 const Announcement = () => {
   return (
-    <main className='bg-[#000000] w-full h-[38px] flex justify-center items-center'>
+    <main className='bg-[#000000] w-full h-[38px] flex justify-center items-center max-w-screen-xl max-auto'>
         {/* Left content */}
         <div className='flex justify-center items-center'>
         <h3 className='text-white text-xs sm:text-sm'>
